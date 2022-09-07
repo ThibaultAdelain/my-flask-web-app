@@ -34,4 +34,7 @@ def create_app(test_config=None):
     """from . means relative import (in this repository); db means db.py"""
     db.init_app(app)
 
+    from . import auth
+    app.register_blueprint(auth.bp)
+
     return app
