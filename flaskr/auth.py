@@ -57,12 +57,12 @@ def login():
         db = get_db()
         error = None
         user = db.execute(
-            "SELECT * FROM user WHERE username = ?" (username,)
+            "SELECT * FROM user WHERE username = ?", (username,)
         ).fetchone()
         # IDEM UTILISER ? et pas f'{}'
 
         if not user:
-            error = 'Incorrect username.'
+            error = 'Invalid username.'
 
         elif not check_password_hash(user['password'], password):            
             error = 'Invalid password'
