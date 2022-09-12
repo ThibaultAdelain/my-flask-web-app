@@ -2,7 +2,7 @@
 
 Site de blog écrit avec python Flask, en suivant le tuto de la doc officielle :
 
-<https://francoisbrucker.github.io/cours_informatique/>
+<https://flask.palletsprojects.com/en/2.1.x/tutorial/>
 
 ## Pour l'installer
 
