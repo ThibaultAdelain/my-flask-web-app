@@ -31,7 +31,7 @@ def register():
             try:
                 db.execute(
                     "INSERT INTO user (username, password) VALUES (?, ?)",
-                    (username, generate_password_hash(password))
+                    (username, generate_password_hash(password, salt_length=16))
                 )
                 #### WE NEED TO ADD SALT HERE ####
                 #### ATTENTION, TOUJOURS UTILISER DB.EXECUTE AVEC LES (?,?) au lieu de f'...{}'
@@ -75,6 +75,9 @@ def login():
         flash(error)   
     return render_template('auth/login.html')
 
+# cookie : la fonction suivante s'éxécute avant chaque request
+# l'user est donc load et saved avant chaque changement de page
+
 @bp.before_app_request
 def load_logged_in_user():
     user_id = session.get('user_id')
@@ -83,7 +86,7 @@ def load_logged_in_user():
         g.user = None
     else:
         g.user = get_db().execute(
-            "SELECT * FROM user WHERE id = ?" (user_id,)
+            "SELECT * FROM user WHERE id = ?", (user_id,)
         ).fetchone()
 
 @bp.route('/logout')

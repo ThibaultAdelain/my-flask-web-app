@@ -1,0 +1,9 @@
+Without salt:
+
+1|thibault|pbkdf2:sha256:260000$ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+
+With salt:
+
+1|thibault|pbkdf2:sha256:260000$qG6IPNu7Cd2mxz1w$63cfd3270ca3feeb7cbb86de98abc956bbffd8376e4634aea93c29cd77e205f1
+
+2|tadelain|pbkdf2:sha256:260000$PD8fiPsf44LRwiD5$f38b7a2ef756f042c9d0725d52a76e48980f42a8d2dfecfc340538eb72039b2c
