@@ -6,9 +6,9 @@ Site de blog écrit avec python Flask, en suivant le tuto de la doc officielle :
 
 ## Pour l'installer
 
-Importez le code sur votre ordinateur.
+Clonez le projet sur votre ordinateur.
 
-Placez dans le dossier *My_flask_web_app*, et créez un environnement python virtuel :
+Créez un environnement python virtuel :
 
 `python3 -m venv my-env`
 
